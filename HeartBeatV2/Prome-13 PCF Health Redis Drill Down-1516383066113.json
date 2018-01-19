@@ -51,371 +51,7 @@
   "rows": [
     {
       "collapse": false,
-      "height": -78,
-      "panels": [
-        {
-          "cacheTimeout": null,
-          "colorBackground": true,
-          "colorValue": false,
-          "colors": [
-            "#d44a3a",
-            "rgba(237, 129, 40, 0.89)",
-            "#299c46"
-          ],
-          "datasource": "${DS_PROMETHEUS}",
-          "format": "none",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 10,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 12,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": false
-          },
-          "tableColumn": "",
-          "targets": [
-            {
-              "expr": "bosh_job_healthy{bosh_job_name=\"syslog_scheduler\", bosh_job_ip=\"100.126.17.54\"}",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "refId": "A"
-            }
-          ],
-          "thresholds": "0.5,0.99999",
-          "title": "Syslog Scheduler @ 100.126.17.54",
-          "type": "singlestat",
-          "valueFontSize": "80%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "NOT FOUND",
-              "value": "null"
-            },
-            {
-              "op": "=",
-              "text": "UP",
-              "value": "1"
-            },
-            {
-              "op": "=",
-              "text": "DOWN",
-              "value": "0"
-            }
-          ],
-          "valueName": "current"
-        }
-      ],
-      "repeat": null,
-      "repeatIteration": null,
-      "repeatRowId": null,
-      "showTitle": false,
-      "title": "Dashboard Row",
-      "titleSize": "h6"
-    },
-    {
-      "collapse": false,
-      "height": -338,
-      "panels": [
-        {
-          "cacheTimeout": null,
-          "colorBackground": true,
-          "colorValue": false,
-          "colors": [
-            "#d44a3a",
-            "rgba(237, 129, 40, 0.89)",
-            "#299c46"
-          ],
-          "datasource": "${DS_PROMETHEUS}",
-          "format": "none",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 11,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 4,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": false
-          },
-          "tableColumn": "",
-          "targets": [
-            {
-              "expr": "bosh_job_healthy{bosh_job_name=\"syslog_adapter\", bosh_job_ip=\"100.126.17.51\"}",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "refId": "A"
-            }
-          ],
-          "thresholds": "0.5,0.99999",
-          "title": "Syslog Adapter @ 100.126.17.51",
-          "type": "singlestat",
-          "valueFontSize": "80%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "NOT FOUND",
-              "value": "null"
-            },
-            {
-              "op": "=",
-              "text": "UP",
-              "value": "1"
-            },
-            {
-              "op": "=",
-              "text": "DOWN",
-              "value": "0"
-            }
-          ],
-          "valueName": "current"
-        },
-        {
-          "cacheTimeout": null,
-          "colorBackground": true,
-          "colorValue": false,
-          "colors": [
-            "#d44a3a",
-            "rgba(237, 129, 40, 0.89)",
-            "#299c46"
-          ],
-          "datasource": "${DS_PROMETHEUS}",
-          "format": "none",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 12,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 4,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": false
-          },
-          "tableColumn": "",
-          "targets": [
-            {
-              "expr": "bosh_job_healthy{bosh_job_name=\"syslog_adapter\", bosh_job_ip=\"100.126.17.52\"}",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "refId": "A"
-            }
-          ],
-          "thresholds": "0.5,0.99999",
-          "title": "Syslog Adapter @ 100.126.17.52",
-          "type": "singlestat",
-          "valueFontSize": "80%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "NOT FOUND",
-              "value": "null"
-            },
-            {
-              "op": "=",
-              "text": "UP",
-              "value": "1"
-            },
-            {
-              "op": "=",
-              "text": "DOWN",
-              "value": "0"
-            }
-          ],
-          "valueName": "current"
-        },
-        {
-          "cacheTimeout": null,
-          "colorBackground": true,
-          "colorValue": false,
-          "colors": [
-            "#d44a3a",
-            "rgba(237, 129, 40, 0.89)",
-            "#299c46"
-          ],
-          "datasource": "${DS_PROMETHEUS}",
-          "format": "none",
-          "gauge": {
-            "maxValue": 100,
-            "minValue": 0,
-            "show": false,
-            "thresholdLabels": false,
-            "thresholdMarkers": true
-          },
-          "id": 13,
-          "interval": null,
-          "links": [],
-          "mappingType": 1,
-          "mappingTypes": [
-            {
-              "name": "value to text",
-              "value": 1
-            },
-            {
-              "name": "range to text",
-              "value": 2
-            }
-          ],
-          "maxDataPoints": 100,
-          "nullPointMode": "connected",
-          "nullText": null,
-          "postfix": "",
-          "postfixFontSize": "50%",
-          "prefix": "",
-          "prefixFontSize": "50%",
-          "rangeMaps": [
-            {
-              "from": "null",
-              "text": "N/A",
-              "to": "null"
-            }
-          ],
-          "span": 4,
-          "sparkline": {
-            "fillColor": "rgba(31, 118, 189, 0.18)",
-            "full": false,
-            "lineColor": "rgb(31, 120, 193)",
-            "show": false
-          },
-          "tableColumn": "",
-          "targets": [
-            {
-              "expr": "bosh_job_healthy{bosh_job_name=\"syslog_adapter\", bosh_job_ip=\"100.126.17.53\"}",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "refId": "A"
-            }
-          ],
-          "thresholds": "0.5,0.99999",
-          "title": "Syslog Adapter @ 100.126.17.53",
-          "type": "singlestat",
-          "valueFontSize": "80%",
-          "valueMaps": [
-            {
-              "op": "=",
-              "text": "NOT FOUND",
-              "value": "null"
-            },
-            {
-              "op": "=",
-              "text": "UP",
-              "value": "1"
-            },
-            {
-              "op": "=",
-              "text": "DOWN",
-              "value": "0"
-            }
-          ],
-          "valueName": "current"
-        }
-      ],
-      "repeat": null,
-      "repeatIteration": null,
-      "repeatRowId": null,
-      "showTitle": false,
-      "title": "Dashboard Row",
-      "titleSize": "h6"
-    },
-    {
-      "collapse": false,
-      "height": 80,
+      "height": 86,
       "panels": [
         {
           "cacheTimeout": null,
@@ -463,7 +99,7 @@
               "to": "null"
             }
           ],
-          "span": 4,
+          "span": 6,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -473,20 +109,20 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "bosh_job_healthy{bosh_job_name=\"loggregator_trafficcontroller\", bosh_job_ip=\"100.126.17.48\"}",
+              "expr": "bosh_job_healthy{bosh_job_name=\"cf-redis-broker\", bosh_job_ip=\"100.126.52.45\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "refId": "A"
             }
           ],
           "thresholds": "0.5,0.99999",
-          "title": "Loggregator Trafficcontroller @ 100.126.17.48",
+          "title": "CF Redis Broker @ 100.126.52.45",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
             {
               "op": "=",
-              "text": "NOT FOUND",
+              "text": "N/A",
               "value": "null"
             },
             {
@@ -548,7 +184,7 @@
               "to": "null"
             }
           ],
-          "span": 4,
+          "span": 6,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -558,20 +194,20 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "bosh_job_healthy{bosh_job_name=\"loggregator_trafficcontroller\", bosh_job_ip=\"100.126.17.49\"}",
+              "expr": "bosh_job_healthy{bosh_job_name=\"redis-on-demand-broker\", bosh_job_ip=\"100.126.52.72\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "refId": "A"
             }
           ],
           "thresholds": "0.5,0.99999",
-          "title": "Loggregator Trafficcontroller @ 100.126.17.49",
+          "title": "Redis On Demand Broker @ 100.126.52.72",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
             {
               "op": "=",
-              "text": "NOT FOUND",
+              "text": "N/A",
               "value": "null"
             },
             {
@@ -586,7 +222,19 @@
             }
           ],
           "valueName": "current"
-        },
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": -21,
+      "panels": [
         {
           "cacheTimeout": null,
           "colorBackground": true,
@@ -633,7 +281,7 @@
               "to": "null"
             }
           ],
-          "span": 4,
+          "span": 6,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -643,20 +291,20 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "bosh_job_healthy{bosh_job_name=\"loggregator_trafficcontroller\", bosh_job_ip=\"100.126.17.50\"}",
+              "expr": "bosh_job_healthy{bosh_job_name=\"dedicated-node\", bosh_job_ip=\"100.126.52.46\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "refId": "A"
             }
           ],
           "thresholds": "0.5,0.99999",
-          "title": "Loggregator Trafficcontroller @ 100.126.17.50",
+          "title": "Redis Dedicated Node @ 100.126.52.46",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
             {
               "op": "=",
-              "text": "NOT FOUND",
+              "text": "N/A",
               "value": "null"
             },
             {
@@ -671,19 +319,7 @@
             }
           ],
           "valueName": "current"
-        }
-      ],
-      "repeat": null,
-      "repeatIteration": null,
-      "repeatRowId": null,
-      "showTitle": false,
-      "title": "Dashboard Row",
-      "titleSize": "h6"
-    },
-    {
-      "collapse": false,
-      "height": -831,
-      "panels": [
+        },
         {
           "cacheTimeout": null,
           "colorBackground": true,
@@ -730,6 +366,103 @@
               "to": "null"
             }
           ],
+          "span": 6,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "expr": "bosh_job_healthy{bosh_job_name=\"dedicated-node\", bosh_job_ip=\"100.126.52.47\"}",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "refId": "A"
+            }
+          ],
+          "thresholds": "0.5,0.99999",
+          "title": "Redis Dedicated Node @ 100.126.52.47",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            },
+            {
+              "op": "=",
+              "text": "UP",
+              "value": "1"
+            },
+            {
+              "op": "=",
+              "text": "DOWN",
+              "value": "0"
+            }
+          ],
+          "valueName": "current"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 32,
+      "panels": [
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "#d44a3a",
+            "rgba(237, 129, 40, 0.89)",
+            "#299c46"
+          ],
+          "datasource": "${DS_PROMETHEUS}",
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 9,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
           "span": 4,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
@@ -740,20 +473,20 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "bosh_job_healthy{bosh_job_name=\"loggregator_trafficcontroller\", bosh_job_ip=\"100.126.17.59\"}",
+              "expr": "bosh_job_healthy{bosh_job_name=\"dedicated-node\", bosh_job_ip=\"100.126.52.49\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "refId": "A"
             }
           ],
           "thresholds": "0.5,0.99999",
-          "title": "Loggregator Trafficcontroller @ 100.126.17.59",
+          "title": "Redis Dedicated Node @ 100.126.52.49",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
             {
               "op": "=",
-              "text": "NOT FOUND",
+              "text": "N/A",
               "value": "null"
             },
             {
@@ -825,20 +558,20 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "bosh_job_healthy{bosh_job_name=\"loggregator_trafficcontroller\", bosh_job_ip=\"100.126.17.60\"}",
+              "expr": "bosh_job_healthy{bosh_job_name=\"dedicated-node\", bosh_job_ip=\"100.126.52.48\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "refId": "A"
             }
           ],
           "thresholds": "0.5,0.99999",
-          "title": "Loggregator Trafficcontroller @ 100.126.17.60",
+          "title": "Redis Dedicated Node @ 100.126.52.48",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
             {
               "op": "=",
-              "text": "NOT FOUND",
+              "text": "N/A",
               "value": "null"
             },
             {
@@ -872,7 +605,7 @@
             "thresholdLabels": false,
             "thresholdMarkers": true
           },
-          "id": 9,
+          "id": 10,
           "interval": null,
           "links": [],
           "mappingType": 1,
@@ -910,20 +643,20 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "bosh_job_healthy{bosh_job_name=\"loggregator_trafficcontroller\", bosh_job_ip=\"100.126.17.61\"}",
+              "expr": "bosh_job_healthy{bosh_job_name=\"dedicated-node\", bosh_job_ip=\"100.126.52.50\"}",
               "format": "time_series",
               "intervalFactor": 2,
               "refId": "A"
             }
           ],
           "thresholds": "0.5,0.99999",
-          "title": "Loggregator Trafficcontroller @ 100.126.17.61",
+          "title": "Redis Dedicated Node @ 100.126.52.50",
           "type": "singlestat",
           "valueFontSize": "80%",
           "valueMaps": [
             {
               "op": "=",
-              "text": "NOT FOUND",
+              "text": "N/A",
               "value": "null"
             },
             {
@@ -984,6 +717,6 @@
     ]
   },
   "timezone": "",
-  "title": "PCF Metrics Logging Heart Beat Drill Down",
-  "version": 4
+  "title": "Prome-13 PCF Health Redis Drill Down",
+  "version": 7
 }
