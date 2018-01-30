@@ -57,7 +57,7 @@
   "rows": [
     {
       "collapse": false,
-      "height": 92,
+      "height": 36,
       "panels": [
         {
           "content": "## Routing",
@@ -91,9 +91,9 @@
           "isIgnoreOKColors": false,
           "links": [
             {
-              "dashUri": "db/pcf-routing-heart-beat-drill-down",
-              "dashboard": "PCF Routing Heart Beat Drill Down",
-              "title": "Routing Drill Down",
+              "dashUri": "db/pcf-routing-health-drill-down",
+              "dashboard": "PCF Routing Health Drill Down",
+              "title": "PCF Routing Drill Down",
               "type": "dashboard"
             }
           ],
@@ -130,7 +130,7 @@
     },
     {
       "collapse": false,
-      "height": 109,
+      "height": 64,
       "panels": [
         {
           "content": "## Authentication",
@@ -202,7 +202,7 @@
     },
     {
       "collapse": false,
-      "height": 117,
+      "height": 88,
       "panels": [
         {
           "content": "## App Lifecycle",
@@ -235,13 +235,13 @@
           "isIgnoreOKColors": false,
           "links": [
             {
-              "dashUri": "db/pcf-app-lifecycle-heart-beat-drill-down",
-              "dashboard": "PCF App Lifecycle Heart Beat Drill Down",
+              "dashUri": "db/pcf-app-lifecycle-health-drill-down-detailed",
+              "dashboard": "PCF App Lifecycle Health Drill Down Detailed",
               "title": "PCF App Lifecycle Drill Down",
               "type": "dashboard"
             }
           ],
-          "span": 3,
+          "span": 2,
           "targets": [
             {
               "aggregation": "Avg",
@@ -256,73 +256,6 @@
               "intervalFactor": 2,
               "legendFormat": "Clock Global",
               "refId": "A",
-              "units": "percentunit",
-              "valueHandler": "Number Threshold",
-              "warn": 0.99
-            }
-          ],
-          "title": "",
-          "type": "vonage-status-panel"
-        },
-        {
-          "clusterName": "Cloud Controller",
-          "colorMode": "Metric",
-          "colors": {
-            "crit": "rgba(245, 54, 54, 0.9)",
-            "disable": "rgba(128, 128, 128, 0.9)",
-            "ok": "rgba(50, 128, 45, 0.9)",
-            "warn": "rgba(237, 129, 40, 0.9)"
-          },
-          "cornerRadius": 0,
-          "datasource": "${DS_PROMETHEUS}",
-          "displayName": "Cloud Controller",
-          "flipCard": false,
-          "flipTime": 5,
-          "fontFormat": "Regular",
-          "id": 39,
-          "isGrayOnNoData": false,
-          "isHideAlertsOnDisable": false,
-          "isIgnoreOKColors": false,
-          "links": [
-            {
-              "dashUri": "db/pcf-app-lifecycle-heart-beat-drill-down",
-              "dashboard": "PCF App Lifecycle Heart Beat Drill Down",
-              "title": "PCF App Lifecycle Drill Down",
-              "type": "dashboard"
-            }
-          ],
-          "span": 4,
-          "targets": [
-            {
-              "aggregation": "Avg",
-              "alias": "Cloud Controller",
-              "crit": 0.75,
-              "decimals": 2,
-              "displayAliasType": "Always",
-              "displayType": "Regular",
-              "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"cloud_controller\"}[5m]))",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "Cloud Controller",
-              "refId": "A",
-              "units": "percentunit",
-              "valueHandler": "Number Threshold",
-              "warn": 0.99
-            },
-            {
-              "aggregation": "Last",
-              "alias": "Cloud Controller Worker",
-              "crit": 0.75,
-              "decimals": 2,
-              "displayAliasType": "Always",
-              "displayType": "Regular",
-              "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"cloud_controller_worker\"}[5m]))",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "Cloud Controller Worker",
-              "refId": "B",
               "units": "percentunit",
               "valueHandler": "Number Threshold",
               "warn": 0.99
@@ -352,13 +285,13 @@
           "isIgnoreOKColors": false,
           "links": [
             {
-              "dashUri": "db/pcf-app-lifecycle-heart-beat-drill-down",
-              "dashboard": "PCF App Lifecycle Heart Beat Drill Down",
+              "dashUri": "db/pcf-app-lifecycle-health-drill-down-detailed",
+              "dashboard": "PCF App Lifecycle Health Drill Down Detailed",
               "title": "PCF App Lifecycle Drill Down",
               "type": "dashboard"
             }
           ],
-          "span": 3,
+          "span": 2,
           "targets": [
             {
               "aggregation": "Avg",
@@ -397,6 +330,140 @@
           ],
           "title": "",
           "type": "vonage-status-panel"
+        },
+        {
+          "clusterName": "BBS",
+          "colorMode": "Metric",
+          "colors": {
+            "crit": "rgba(245, 54, 54, 0.9)",
+            "disable": "rgba(128, 128, 128, 0.9)",
+            "ok": "rgba(50, 128, 45, 0.9)",
+            "warn": "rgba(237, 129, 40, 0.9)"
+          },
+          "cornerRadius": 0,
+          "datasource": "${DS_PROMETHEUS}",
+          "displayName": "BBS",
+          "flipCard": false,
+          "flipTime": 5,
+          "fontFormat": "Regular",
+          "id": 50,
+          "isGrayOnNoData": false,
+          "isHideAlertsOnDisable": false,
+          "isIgnoreOKColors": false,
+          "links": [
+            {
+              "dashUri": "db/pcf-app-lifecycle-health-drill-down-detailed",
+              "dashboard": "PCF App Lifecycle Health Drill Down Detailed",
+              "title": "PCF App Lifecycle Drill Down",
+              "type": "dashboard"
+            }
+          ],
+          "span": 3,
+          "targets": [
+            {
+              "aggregation": "Last",
+              "alias": "mysql (CF-deployment)",
+              "crit": 0.75,
+              "decimals": 2,
+              "displayAliasType": "Always",
+              "displayType": "Regular",
+              "displayValueWithAlias": "When Alias Displayed",
+              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_deployment=~\"^cf-.*\", bosh_job_name=\"mysql\"}[5m]))",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "mysql (CF-deployment)",
+              "refId": "A",
+              "units": "percentunit",
+              "valueHandler": "Number Threshold",
+              "warn": 0.99
+            },
+            {
+              "aggregation": "Last",
+              "alias": "mysql_proxy (CF-deployment)",
+              "crit": 0.75,
+              "decimals": 2,
+              "displayAliasType": "Always",
+              "displayType": "Regular",
+              "displayValueWithAlias": "When Alias Displayed",
+              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"mysql_proxy\"}[5m]))",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "mysql_proxy (CF-deployment)",
+              "refId": "B",
+              "units": "percentunit",
+              "valueHandler": "Number Threshold",
+              "warn": 0.99
+            }
+          ],
+          "title": "",
+          "type": "vonage-status-panel"
+        },
+        {
+          "clusterName": "Cloud Controller",
+          "colorMode": "Metric",
+          "colors": {
+            "crit": "rgba(245, 54, 54, 0.9)",
+            "disable": "rgba(128, 128, 128, 0.9)",
+            "ok": "rgba(50, 128, 45, 0.9)",
+            "warn": "rgba(237, 129, 40, 0.9)"
+          },
+          "cornerRadius": 0,
+          "datasource": "${DS_PROMETHEUS}",
+          "displayName": "Cloud Controller",
+          "flipCard": false,
+          "flipTime": 5,
+          "fontFormat": "Regular",
+          "id": 39,
+          "isGrayOnNoData": false,
+          "isHideAlertsOnDisable": false,
+          "isIgnoreOKColors": false,
+          "links": [
+            {
+              "dashUri": "db/pcf-app-lifecycle-health-drill-down-detailed",
+              "dashboard": "PCF App Lifecycle Health Drill Down Detailed",
+              "title": "PCF App Lifecycle Drill Down",
+              "type": "dashboard"
+            }
+          ],
+          "span": 3,
+          "targets": [
+            {
+              "aggregation": "Avg",
+              "alias": "Cloud Controller",
+              "crit": 0.75,
+              "decimals": 2,
+              "displayAliasType": "Always",
+              "displayType": "Regular",
+              "displayValueWithAlias": "When Alias Displayed",
+              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"cloud_controller\"}[5m]))",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "Cloud Controller",
+              "refId": "A",
+              "units": "percentunit",
+              "valueHandler": "Number Threshold",
+              "warn": 0.99
+            },
+            {
+              "aggregation": "Last",
+              "alias": "Cloud Controller Worker",
+              "crit": 0.75,
+              "decimals": 2,
+              "displayAliasType": "Always",
+              "displayType": "Regular",
+              "displayValueWithAlias": "When Alias Displayed",
+              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"cloud_controller_worker\"}[5m]))",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "Cloud Controller Worker",
+              "refId": "B",
+              "units": "percentunit",
+              "valueHandler": "Number Threshold",
+              "warn": 0.99
+            }
+          ],
+          "title": "",
+          "type": "vonage-status-panel"
         }
       ],
       "repeat": null,
@@ -408,7 +475,7 @@
     },
     {
       "collapse": false,
-      "height": 110,
+      "height": 79,
       "panels": [
         {
           "content": "## App Storage & Execution",
@@ -441,8 +508,8 @@
           "isIgnoreOKColors": false,
           "links": [
             {
-              "dashUri": "db/pcf-app-storage-execution-heart-beat-drill-down",
-              "dashboard": "PCF App Storage Execution Heart Beat Drill Down",
+              "dashUri": "db/pcf-app-storage-execution-health-drill-down",
+              "dashboard": "PCF App Storage Execution Health Drill Down",
               "title": "PCF App Storage Execution Drill Down",
               "type": "dashboard"
             }
@@ -491,8 +558,8 @@
           "isIgnoreOKColors": false,
           "links": [
             {
-              "dashUri": "db/pcf-app-storage-execution-heart-beat-drill-down",
-              "dashboard": "PCF App Storage Execution Heart Beat Drill Down",
+              "dashUri": "db/pcf-app-storage-execution-health-drill-down",
+              "dashboard": "PCF App Storage Execution Health Drill Down",
               "title": "PCF App Storage Execution Drill Down",
               "type": "dashboard"
             }
@@ -563,14 +630,7 @@
           "isGrayOnNoData": false,
           "isHideAlertsOnDisable": false,
           "isIgnoreOKColors": false,
-          "links": [
-            {
-              "dashUri": "db/pcf-rabbitmq-heart-beat-drill-down",
-              "dashboard": "PCF RabbitMQ Heart Beat Drill Down",
-              "title": "PCF RabbitMQ Drill Down",
-              "type": "dashboard"
-            }
-          ],
+          "links": [],
           "span": 3,
           "targets": [
             {
@@ -649,14 +709,7 @@
           "isGrayOnNoData": false,
           "isHideAlertsOnDisable": false,
           "isIgnoreOKColors": false,
-          "links": [
-            {
-              "dashUri": "db/pcf-mysql-heart-beat-drill-down",
-              "dashboard": "PCF Mysql Heart Beat Drill Down",
-              "title": "PCF Mysql Drill Down",
-              "type": "dashboard"
-            }
-          ],
+          "links": [],
           "span": 3,
           "targets": [
             {
@@ -734,14 +787,7 @@
           "isGrayOnNoData": true,
           "isHideAlertsOnDisable": false,
           "isIgnoreOKColors": false,
-          "links": [
-            {
-              "dashUri": "db/prome-13-pcf-health-redis-drill-down",
-              "dashboard": "Prome-13 PCF Health Redis Drill Down",
-              "title": "PCF Redis Drill Down",
-              "type": "dashboard"
-            }
-          ],
+          "links": [],
           "span": 4,
           "targets": [
             {
@@ -809,7 +855,7 @@
     },
     {
       "collapse": false,
-      "height": 116,
+      "height": 64,
       "panels": [
         {
           "content": "## Messaging",
@@ -962,14 +1008,7 @@
           "isGrayOnNoData": false,
           "isHideAlertsOnDisable": false,
           "isIgnoreOKColors": false,
-          "links": [
-            {
-              "dashUri": "db/pcf-metrics-logging-heart-beat-drill-down",
-              "dashboard": "PCF Metrics Logging Heart Beat Drill Down",
-              "title": "PCF Metrics Logging Drill Down",
-              "type": "dashboard"
-            }
-          ],
+          "links": [],
           "span": 10,
           "targets": [
             {
@@ -1007,7 +1046,7 @@
               "warn": 0.99
             },
             {
-              "aggregation": "Avg",
+              "aggregation": "Last",
               "alias": "Syslog Adapter",
               "crit": 0.75,
               "decimals": 2,
@@ -1019,6 +1058,23 @@
               "intervalFactor": 2,
               "legendFormat": "Syslog Adapter",
               "refId": "C",
+              "units": "percentunit",
+              "valueHandler": "Number Threshold",
+              "warn": 0.99
+            },
+            {
+              "aggregation": "Last",
+              "alias": "Doppler",
+              "crit": 0.75,
+              "decimals": 2,
+              "displayAliasType": "Always",
+              "displayType": "Regular",
+              "displayValueWithAlias": "When Alias Displayed",
+              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"doppler\"}[5m]))",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "Doppler",
+              "refId": "D",
               "units": "percentunit",
               "valueHandler": "Number Threshold",
               "warn": 0.99
@@ -1037,10 +1093,21 @@
     },
     {
       "collapse": false,
-      "height": -12,
+      "height": -7,
       "panels": [
         {
-          "colorMode": "Panel",
+          "content": "## Data Stores",
+          "id": 46,
+          "links": [],
+          "mode": "markdown",
+          "span": 2,
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        },
+        {
+          "clusterName": "ETCD",
+          "colorMode": "Metric",
           "colors": {
             "crit": "rgba(245, 54, 54, 0.9)",
             "disable": "rgba(128, 128, 128, 0.9)",
@@ -1049,350 +1116,101 @@
           },
           "cornerRadius": 0,
           "datasource": "${DS_PROMETHEUS}",
-          "description": "Average of All Displayed Metrics Over Last 5 Mins",
-          "displayName": "",
+          "displayName": "ETCD",
           "flipCard": false,
           "flipTime": 5,
           "fontFormat": "Regular",
-          "id": 11,
+          "id": 47,
           "isGrayOnNoData": false,
           "isHideAlertsOnDisable": false,
           "isIgnoreOKColors": false,
-          "links": [
-            {
-              "dashUri": "db/prome-13-pcf-health-ert-drill-down",
-              "dashboard": "Prome-13 PCF Health ERT Drill Down",
-              "title": "PCF ERT Health Drill Down",
-              "type": "dashboard"
-            }
-          ],
-          "span": 12,
+          "links": [],
+          "span": 10,
           "targets": [
             {
-              "aggregation": "Avg",
-              "alias": "backup-prepare",
-              "crit": 75,
+              "aggregation": "Last",
+              "alias": "ETCD TLS Server",
+              "crit": 0.75,
               "decimals": 2,
               "displayAliasType": "Always",
               "displayType": "Regular",
               "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"backup-prepare\"}[5m]))*100",
+              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"etcd_tls_server\"}[5m]))",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "ETCD TLS Server",
+              "refId": "A",
+              "units": "percentunit",
+              "valueHandler": "Number Threshold",
+              "warn": 0.99
+            }
+          ],
+          "title": "",
+          "type": "vonage-status-panel"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": -633,
+      "panels": [
+        {
+          "content": "## Backup & Restore",
+          "id": 48,
+          "links": [],
+          "mode": "markdown",
+          "span": 2,
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        },
+        {
+          "clusterName": "Backup",
+          "colorMode": "Metric",
+          "colors": {
+            "crit": "rgba(245, 54, 54, 0.9)",
+            "disable": "rgba(128, 128, 128, 0.9)",
+            "ok": "rgba(50, 128, 45, 0.9)",
+            "warn": "rgba(237, 129, 40, 0.9)"
+          },
+          "cornerRadius": 0,
+          "datasource": "${DS_PROMETHEUS}",
+          "displayName": "Backup",
+          "flipCard": false,
+          "flipTime": 5,
+          "fontFormat": "Regular",
+          "id": 49,
+          "isGrayOnNoData": false,
+          "isHideAlertsOnDisable": false,
+          "isIgnoreOKColors": false,
+          "links": [],
+          "span": 10,
+          "targets": [
+            {
+              "aggregation": "Last",
+              "alias": "backup-prepare",
+              "crit": 0.75,
+              "decimals": 2,
+              "displayAliasType": "Always",
+              "displayType": "Regular",
+              "displayValueWithAlias": "When Alias Displayed",
+              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"backup-prepare\"}[5m]))",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "backup-prepare",
               "refId": "A",
-              "units": "percent",
+              "units": "percentunit",
               "valueHandler": "Number Threshold",
-              "warn": 99
-            },
-            {
-              "aggregation": "Avg",
-              "alias": "clock_global",
-              "crit": 75,
-              "decimals": 2,
-              "displayAliasType": "Always",
-              "displayType": "Regular",
-              "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"clock_global\"}[5m]))*100",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "clock_global",
-              "refId": "B",
-              "units": "percent",
-              "valueHandler": "Number Threshold",
-              "warn": 99
-            },
-            {
-              "aggregation": "Avg",
-              "alias": "cloud_controller",
-              "crit": 75,
-              "decimals": 2,
-              "displayAliasType": "Always",
-              "displayType": "Regular",
-              "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"cloud_controller\"}[5m]))*100",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "cloud_controller",
-              "refId": "C",
-              "units": "percent",
-              "valueHandler": "Number Threshold",
-              "warn": 99
-            },
-            {
-              "aggregation": "Avg",
-              "alias": "cloud_controller_worker",
-              "crit": 75,
-              "decimals": 2,
-              "displayAliasType": "Always",
-              "displayType": "Regular",
-              "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"cloud_controller_worker\"}[5m]))*100",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "cloud_controller_worker",
-              "refId": "D",
-              "units": "percent",
-              "valueHandler": "Number Threshold",
-              "warn": 99
-            },
-            {
-              "aggregation": "Avg",
-              "alias": "consul_server",
-              "crit": 75,
-              "decimals": 2,
-              "displayAliasType": "Always",
-              "displayType": "Regular",
-              "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"consul_server\"}[5m]))*100",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "consul_server",
-              "refId": "E",
-              "units": "percent",
-              "valueHandler": "Number Threshold",
-              "warn": 99
-            },
-            {
-              "aggregation": "Avg",
-              "alias": "diego_brain",
-              "crit": 75,
-              "decimals": 2,
-              "displayAliasType": "Always",
-              "displayType": "Regular",
-              "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"diego_brain\"}[5m]))*100",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "diego_brain",
-              "refId": "F",
-              "units": "percent",
-              "valueHandler": "Number Threshold",
-              "warn": 99
-            },
-            {
-              "aggregation": "Avg",
-              "alias": "mysql",
-              "crit": 75,
-              "decimals": 2,
-              "displayAliasType": "Always",
-              "displayType": "Regular",
-              "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_deployment=~\"^cf-.*\", bosh_job_name=\"mysql\"}[5m]))*100",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "mysql",
-              "refId": "G",
-              "units": "percent",
-              "valueHandler": "Number Threshold",
-              "warn": 99
-            },
-            {
-              "aggregation": "Avg",
-              "alias": "mysql_proxy",
-              "crit": 75,
-              "decimals": 2,
-              "displayAliasType": "Always",
-              "displayType": "Regular",
-              "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"mysql_proxy\"}[5m]))*100",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "mysql_proxy",
-              "refId": "H",
-              "units": "percent",
-              "valueHandler": "Number Threshold",
-              "warn": 99
-            },
-            {
-              "aggregation": "Avg",
-              "alias": "nats",
-              "crit": 75,
-              "decimals": 2,
-              "displayAliasType": "Always",
-              "displayType": "Regular",
-              "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"nats\"}[5m]))*100",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "nats",
-              "refId": "I",
-              "units": "percent",
-              "valueHandler": "Number Threshold",
-              "warn": 99
-            },
-            {
-              "aggregation": "Avg",
-              "alias": "nfs_server",
-              "crit": 75,
-              "decimals": 2,
-              "displayAliasType": "Always",
-              "displayType": "Regular",
-              "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"nfs_server\"}[5m]))*100",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "nfs_server",
-              "refId": "J",
-              "units": "percent",
-              "valueHandler": "Number Threshold",
-              "warn": 99
-            },
-            {
-              "aggregation": "Avg",
-              "alias": "router",
-              "crit": 75,
-              "decimals": 2,
-              "displayAliasType": "Always",
-              "displayType": "Regular",
-              "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"router\"}[5m]))*100",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "router",
-              "refId": "K",
-              "units": "percent",
-              "valueHandler": "Number Threshold",
-              "warn": 99
-            },
-            {
-              "aggregation": "Avg",
-              "alias": "diego_cell",
-              "crit": 75,
-              "decimals": 2,
-              "displayAliasType": "Always",
-              "displayType": "Regular",
-              "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"diego_cell\"}[5m]))*100",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "diego_cell",
-              "refId": "L",
-              "units": "percent",
-              "valueHandler": "Number Threshold",
-              "warn": 99
-            },
-            {
-              "aggregation": "Avg",
-              "alias": "diego_database",
-              "crit": 75,
-              "decimals": 2,
-              "displayAliasType": "Always",
-              "displayType": "Regular",
-              "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"diego_database\"}[5m]))*100",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "diego_database",
-              "refId": "M",
-              "units": "percent",
-              "valueHandler": "Number Threshold",
-              "warn": 99
-            },
-            {
-              "aggregation": "Avg",
-              "alias": "doppler",
-              "crit": 75,
-              "decimals": 2,
-              "displayAliasType": "Always",
-              "displayType": "Regular",
-              "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"doppler\"}[5m]))*100",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "doppler",
-              "refId": "N",
-              "units": "percent",
-              "valueHandler": "Number Threshold",
-              "warn": 99
-            },
-            {
-              "aggregation": "Avg",
-              "alias": "etcd_tls_server",
-              "crit": 75,
-              "decimals": 2,
-              "displayAliasType": "Always",
-              "displayType": "Regular",
-              "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"etcd_tls_server\"}[5m]))*100",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "etcd_tls_server",
-              "refId": "O",
-              "units": "none",
-              "valueHandler": "Number Threshold",
-              "warn": 99
-            },
-            {
-              "aggregation": "Avg",
-              "alias": "loggregator_trafficcontroller",
-              "crit": 75,
-              "decimals": 2,
-              "displayAliasType": "Always",
-              "displayType": "Regular",
-              "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"loggregator_trafficcontroller\"}[5m]))*100",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "loggregator_trafficcontroller",
-              "refId": "P",
-              "units": "percent",
-              "valueHandler": "Number Threshold",
-              "warn": 99
-            },
-            {
-              "aggregation": "Avg",
-              "alias": "syslog_scheduler",
-              "crit": 75,
-              "decimals": 2,
-              "displayAliasType": "Always",
-              "displayType": "Regular",
-              "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"syslog_scheduler\"}[5m]))*100",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "syslog_scheduler",
-              "refId": "Q",
-              "units": "percent",
-              "valueHandler": "Number Threshold",
-              "warn": 99
-            },
-            {
-              "aggregation": "Avg",
-              "alias": "syslog_adapter",
-              "crit": 75,
-              "decimals": 2,
-              "displayAliasType": "Always",
-              "displayType": "Regular",
-              "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"syslog_adapter\"}[5m]))*100",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "syslog_adapter",
-              "refId": "R",
-              "units": "percent",
-              "valueHandler": "Number Threshold",
-              "warn": 99
-            },
-            {
-              "aggregation": "Avg",
-              "alias": "uaa",
-              "crit": 75,
-              "decimals": 2,
-              "displayAliasType": "Always",
-              "displayType": "Regular",
-              "displayValueWithAlias": "When Alias Displayed",
-              "expr": "avg(avg_over_time(bosh_job_healthy{bosh_job_name=\"uaa\"}[5m]))*100",
-              "format": "time_series",
-              "intervalFactor": 2,
-              "legendFormat": "uaa",
-              "refId": "S",
-              "units": "percent",
-              "valueHandler": "Number Threshold",
-              "warn": 99
+              "warn": 0.99
             }
           ],
-          "title": "PCF ERT Overall Health",
+          "title": "",
           "type": "vonage-status-panel"
         }
       ],
@@ -1441,5 +1259,5 @@
   },
   "timezone": "",
   "title": "Prome-13 Dashboard PCF System Health Diagram",
-  "version": 19
+  "version": 43
 }
